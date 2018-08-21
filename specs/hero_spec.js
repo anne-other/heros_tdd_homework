@@ -1,9 +1,14 @@
 const assert = require("assert");
 const Hero = require("../hero.js");
+const Task = require("../task.js");
+let hero;
+let task
 
 describe("Hero", function(){
   beforeEach(function(){
-    hero = new Hero("Grogg Strongjaw", 200, "Ale", ["I would like to RAGE","Win in the Crucible Pit", "Draw from the Deck of Many Things"])
+    const task1 = new Task()
+    const task2 = new Task()
+    hero = new Hero("Grogg Strongjaw", 200, "Ale", [task1, task2])
   });
 
   it("should have a name", function(){
@@ -28,6 +33,6 @@ describe("Hero", function(){
 
   it("should have a collection of tasks to complete", function(){
     const actual = hero.tasks.length;
-    assert.strictEqual(actual, 3)
+    assert.strictEqual(actual, 2)
   });
 })
