@@ -8,12 +8,12 @@ describe("Task", function(){
   });
   it("should have a difficulty level", function(){
     const actual = task.difficulty;
-    assert.strictEqual(actual, 1)
+    assert.strictEqual(actual, 1);
   });
 
   it("should have an urgency level", function(){
     const actual = task.urgency;
-    assert.strictEqual(actual, 2)
+    assert.strictEqual(actual, 2);
   });
 
   it("should have a reward", function(){
@@ -21,5 +21,11 @@ describe("Task", function(){
     assert.strictEqual(actual, "glory")
   });
 
-  xit("should be able to be marked as completed");
+  it("should be able to be marked as completed", function(){
+    let actual = task.isComplete;
+    assert.strictEqual(actual, false);
+    task.completeTask()
+    actual = task.isComplete;
+    assert.strictEqual(actual, true);
+  });
 })
