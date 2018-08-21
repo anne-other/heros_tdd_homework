@@ -4,7 +4,7 @@ let food;
 
 describe("Food", function(){
   beforeEach(function(){
-    food = new Food("meat");
+    food = new Food("meat", 5);
   });
 
   it("should have a name", function(){
@@ -12,5 +12,8 @@ describe("Food", function(){
     assert.strictEqual(actual, "meat");
   });
 
-  xit("should have a replenishmenmt value");
+  it("should have a replenishmenmt value", function(){
+    const actual = food.replenishmenmt;
+    assert.strictEqual(actual, 5)
+  });
 })
