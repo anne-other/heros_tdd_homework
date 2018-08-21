@@ -11,8 +11,9 @@ describe("Hero", function(){
   beforeEach(function(){
     iWouldLikeToRage = new Task(1, 2, "glory");
     crucibleShowdown = new Task(5, 6, "money");
+    drinkingContestWithPike = new Task(3, 7, "fun");
     ale = new Food("ale", 2)
-    hero = new Hero("Grogg Strongjaw", 200, ale, [iWouldLikeToRage, crucibleShowdown]);
+    hero = new Hero("Grogg Strongjaw", 200, ale, [iWouldLikeToRage, crucibleShowdown, drinkingContestWithPike]);
   });
 
   it("should have a name", function(){
@@ -37,7 +38,7 @@ describe("Hero", function(){
 
   it("should have a collection of tasks to complete", function(){
     const actual = hero.tasks.length;
-    assert.strictEqual(actual, 2)
+    assert.strictEqual(actual, 3)
   });
 
   describe("Food", function() {
@@ -55,16 +56,26 @@ describe("Hero", function(){
     });
   });
 
-  describe("Task", function() {
-    xit("should be able to sort tasks by difficuly, urgency or reward", function(){
+  // describe("Task", function() {
+  //   it("should be able to sort tasks by difficulty", function(){
+  //     hero.sortBy("difficulty");
+  //     const actual = hero.tasks
+  //     assert.deepStrictEqual(actual, [iWouldLikeToRage, drinkingContestWithPike, crucibleShowdown])
+  //   });
 
-    });
+    // xit("should be able to sort tasks by urgency", function(){
+    //   hero.sortByUrgency();
+    //   const actual = hero.tasks
+    //   assert.deepStrictEqual(actual, [iWouldLikeToRage, crucibleShowdown, drinkingContestWithPike]));
+
+    // xit("should be able to sort tasks by reward");
+
     it("should be able to view tasks that are marked as completed or incomplete", function() {
       iWouldLikeToRage.completeTask();
       let actual = hero.completedTasks(true);
       assert.deepStrictEqual(actual, [iWouldLikeToRage]);
       actual = hero.completedTasks(false);
-      assert.deepStrictEqual(actual, [crucibleShowdown]);
+      assert.deepStrictEqual(actual, [crucibleShowdown, drinkingContestWithPike]);
     });
   });
 })
