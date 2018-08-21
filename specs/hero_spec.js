@@ -9,7 +9,7 @@ describe("Hero", function(){
   beforeEach(function(){
     const task1 = new Task(1, 2, "glory");
     const task2 = new Task(5, 6, "money");
-    ale = new Food()
+    ale = new Food("ale", 1)
     hero = new Hero("Grogg Strongjaw", 200, ale, [task1, task2]);
   });
 
@@ -37,4 +37,14 @@ describe("Hero", function(){
     const actual = hero.tasks.length;
     assert.strictEqual(actual, 2)
   });
+
+  describe("Food", function() {
+    xit("should be able to eat food and health goes up by replenishmenmt value");
+    xit("should be replenished by 1.5* if food consumed is favourite food");
+  });
+
+  describe("Task", function() {
+    xit("should be able to sort tasks by difficuly, urgency or reward");
+    xit("should be able to view tasks that are marked as completed or incomplete")
+  })
 })
