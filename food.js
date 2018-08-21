@@ -1,6 +1,6 @@
-const Food = function(name, replenishmenmt){
+const Food = function(name, replenishment){
   this.name = name;
-  this.replenishmenmt = replenishmenmt;
+  this.replenishment = replenishment;
 };
 
 module.exports = Food;

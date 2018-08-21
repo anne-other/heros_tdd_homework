@@ -39,7 +39,13 @@ describe("Hero", function(){
   });
 
   describe("Food", function() {
-    xit("should be able to eat food and health goes up by replenishmenmt value");
+    it("should be able to eat food and health goes up by replenishment value", function(){
+      meat = new Food("meat", 5);
+      hero.eat(meat);
+      const actual = hero.health;
+      assert.strictEqual(actual, 205)
+    });
+
     xit("should be replenished by 1.5* if food consumed is favourite food");
   });
 
