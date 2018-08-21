@@ -1,15 +1,18 @@
 const assert = require("assert");
 const Hero = require("../hero.js");
-let hero;
 
 describe("Hero", function(){
   beforeEach(function(){
-    hero = new Hero()
+    hero = new Hero("Grogg Strongjaw")
   });
 
-  it("should have a name");
-  it("should have health");
-  it("should have a favourite food");
-  it("should talk saying their name");
-  it("should have a collection of tasks to complete");
+  it("should have a name", function(){
+    const actual = hero.name;
+    assert.strictEqual(actual, "Grogg Strongjaw");
+  });
+
+  xit("should have health");
+  xit("should have a favourite food");
+  xit("should talk saying their name");
+  xit("should have a collection of tasks to complete");
 })
