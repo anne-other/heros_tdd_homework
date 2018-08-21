@@ -21,6 +21,10 @@ describe("Hero", function(){
     assert.strictEqual(actual, "meat")
   });
 
-  xit("should talk saying their name");
+  it("should talk saying their name", function() {
+    const actual = hero.sayName();
+    assert.strictEqual(actual, "I am Grogg Strongjaw")
+  });
+
   xit("should have a collection of tasks to complete");
 })
