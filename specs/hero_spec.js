@@ -6,8 +6,8 @@ let task
 
 describe("Hero", function(){
   beforeEach(function(){
-    const task1 = new Task()
-    const task2 = new Task()
+    const task1 = new Task(1)
+    const task2 = new Task(5)
     hero = new Hero("Grogg Strongjaw", 200, "Ale", [task1, task2])
   });
 

@@ -1,9 +1,10 @@
 const assert = require("assert");
-const Task = require("../hero.js");
+const Task = require("../task.js");
+let task
 
 describe("Task", function(){
   beforeEach(function(){
-    task = new Task()
+    task = new Task(1)
   });
   it("should have a difficulty level", function(){
     const actual = task.difficulty;
