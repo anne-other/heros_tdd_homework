@@ -4,11 +4,13 @@ const Task = require("../task.js");
 const Food = require("../food.js")
 let hero;
 let food;
+let iWouldLikeToRage;
+let crucibleShowdown;
 
 describe("Hero", function(){
   beforeEach(function(){
-    const iWouldLikeToRage = new Task(1, 2, "glory");
-    const crucibleShowdown = new Task(5, 6, "money");
+    iWouldLikeToRage = new Task(1, 2, "glory");
+    crucibleShowdown = new Task(5, 6, "money");
     ale = new Food("ale", 2)
     hero = new Hero("Grogg Strongjaw", 200, ale, [iWouldLikeToRage, crucibleShowdown]);
   });
@@ -54,7 +56,15 @@ describe("Hero", function(){
   });
 
   describe("Task", function() {
-    xit("should be able to sort tasks by difficuly, urgency or reward");
-    xit("should be able to view tasks that are marked as completed or incomplete")
-  })
+    xit("should be able to sort tasks by difficuly, urgency or reward", function(){
+
+    });
+    it("should be able to view tasks that are marked as completed or incomplete", function() {
+      iWouldLikeToRage.completeTask();
+      let actual = hero.completedTasks(true);
+      assert.deepStrictEqual(actual, [iWouldLikeToRage]);
+      actual = hero.completedTasks(false);
+      assert.deepStrictEqual(actual, [crucibleShowdown]);
+    });
+  });
 })

@@ -17,4 +17,15 @@ Hero.prototype.eat = function (food) {
   this.health += replenishmentValue;
 };
 
+Hero.prototype.completedTasks = function (status) {
+  let completed = [];
+  for (task of this.tasks) {
+    if (task.isComplete === status) {
+      completed.push(task);
+    };
+  };
+  return completed;
+};
+
+
 module.exports = Hero;
