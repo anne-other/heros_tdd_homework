@@ -4,7 +4,7 @@ let task
 
 describe("Task", function(){
   beforeEach(function(){
-    task = new Task(1, 2)
+    task = new Task(1, 2, "glory")
   });
   it("should have a difficulty level", function(){
     const actual = task.difficulty;
@@ -16,6 +16,10 @@ describe("Task", function(){
     assert.strictEqual(actual, 2)
   });
 
-  xit("should have a reward");
+  it("should have a reward", function(){
+    const actual = task.reward;
+    assert.strictEqual(actual, "glory")
+  });
+
   xit("should be able to be marked as completed");
 })
