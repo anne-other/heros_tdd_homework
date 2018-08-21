@@ -1,5 +1,5 @@
-const Task = function(){
-
+const Task = function(difficulty){
+  this.difficulty = difficulty;
 }
 
 module.exports = Task;
