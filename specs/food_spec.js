@@ -4,9 +4,13 @@ let food;
 
 describe("Food", function(){
   beforeEach(function(){
-    food = new Food ();
+    food = new Food("meat");
   });
 
-  xit("should have a name");
+  it("should have a name", function(){
+    const actual = food.name;
+    assert.strictEqual(actual, "meat");
+  });
+
   xit("should have a replenishmenmt value");
 })
