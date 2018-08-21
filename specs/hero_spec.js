@@ -3,7 +3,7 @@ const Hero = require("../hero.js");
 
 describe("Hero", function(){
   beforeEach(function(){
-    hero = new Hero("Grogg Strongjaw", 200)
+    hero = new Hero("Grogg Strongjaw", 200, "meat")
   });
 
   it("should have a name", function(){
@@ -16,7 +16,11 @@ describe("Hero", function(){
     assert.strictEqual(actual, 200);
   });
 
-  xit("should have a favourite food");
+  it("should have a favourite food", function(){
+    const actual = hero.favouriteFood;
+    assert.strictEqual(actual, "meat")
+  });
+
   xit("should talk saying their name");
   xit("should have a collection of tasks to complete");
 })
