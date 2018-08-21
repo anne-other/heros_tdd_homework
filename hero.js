@@ -10,7 +10,10 @@ Hero.prototype.sayName = function () {
 };
 
 Hero.prototype.eat = function (food) {
-  const replenishmentValue = food.replenishment;
+  let replenishmentValue = food.replenishment;
+  if (food === this.favouriteFood) {
+    replenishmentValue *= 1.5;
+  }
   this.health += replenishmentValue;
 };
 

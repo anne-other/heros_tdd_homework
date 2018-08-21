@@ -7,10 +7,10 @@ let food;
 
 describe("Hero", function(){
   beforeEach(function(){
-    const task1 = new Task(1, 2, "glory");
-    const task2 = new Task(5, 6, "money");
-    ale = new Food("ale", 1)
-    hero = new Hero("Grogg Strongjaw", 200, ale, [task1, task2]);
+    const iWouldLikeToRage = new Task(1, 2, "glory");
+    const crucibleShowdown = new Task(5, 6, "money");
+    ale = new Food("ale", 2)
+    hero = new Hero("Grogg Strongjaw", 200, ale, [iWouldLikeToRage, crucibleShowdown]);
   });
 
   it("should have a name", function(){
@@ -43,10 +43,14 @@ describe("Hero", function(){
       meat = new Food("meat", 5);
       hero.eat(meat);
       const actual = hero.health;
-      assert.strictEqual(actual, 205)
+      assert.strictEqual(actual, 205);
     });
 
-    xit("should be replenished by 1.5* if food consumed is favourite food");
+    it("should be replenished by 1.5* if food consumed is favourite food", function(){
+      hero.eat(ale);
+      const actual = hero.health;
+      assert.strictEqual(actual, 203);
+    });
   });
 
   describe("Task", function() {
