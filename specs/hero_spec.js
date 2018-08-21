@@ -1,14 +1,16 @@
 const assert = require("assert");
 const Hero = require("../hero.js");
 const Task = require("../task.js");
+const Food = require("../food.js")
 let hero;
-let task
+let food;
 
 describe("Hero", function(){
   beforeEach(function(){
-    const task1 = new Task(1, 2, "glory")
-    const task2 = new Task(5, 6, "money")
-    hero = new Hero("Grogg Strongjaw", 200, "Ale", [task1, task2])
+    const task1 = new Task(1, 2, "glory");
+    const task2 = new Task(5, 6, "money");
+    ale = new Food()
+    hero = new Hero("Grogg Strongjaw", 200, ale, [task1, task2]);
   });
 
   it("should have a name", function(){
@@ -23,7 +25,7 @@ describe("Hero", function(){
 
   it("should have a favourite food", function(){
     const actual = hero.favouriteFood;
-    assert.strictEqual(actual, "Ale")
+    assert.strictEqual(actual, ale);
   });
 
   it("should talk saying their name", function() {
