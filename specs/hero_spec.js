@@ -3,7 +3,7 @@ const Hero = require("../hero.js");
 
 describe("Hero", function(){
   beforeEach(function(){
-    hero = new Hero("Grogg Strongjaw", 200, "Ale", ["Win in the Crucible Pit", "Draw from the Deck of Many Things"])
+    hero = new Hero("Grogg Strongjaw", 200, "Ale", ["I would like to RAGE","Win in the Crucible Pit", "Draw from the Deck of Many Things"])
   });
 
   it("should have a name", function(){
@@ -28,6 +28,6 @@ describe("Hero", function(){
 
   it("should have a collection of tasks to complete", function(){
     const actual = hero.tasks.length;
-    assert.strictEqual(actual, 2)
+    assert.strictEqual(actual, 3)
   });
 })
