@@ -27,18 +27,18 @@ Hero.prototype.completedTasks = function (status) {
   return completed;
 };
 
-// Hero.prototype.sortBy = function (by) {
-//   let compare = function(a, b){
-//     if (a.by < b.by) {
-//       return -1;
-//     };
-//     if (a.by > b.by) {
-//       return 1;
-//     };
-//       return 0;
-//   };
-//   this.tasks.sort(compare);
-// };
+Hero.prototype.sortBy = function (by) {
+  let compare = function(a, b){
+    if (a[by] < b[by]) {
+      return -1;
+    };
+    if (a[by] > b[by]) {
+      return 1;
+    };
+      return 0;
+  };
+  this.tasks.sort(compare);
+};
 
 
 module.exports = Hero;

@@ -56,19 +56,24 @@ describe("Hero", function(){
     });
   });
 
-  // describe("Task", function() {
-  //   it("should be able to sort tasks by difficulty", function(){
-  //     hero.sortBy("difficulty");
-  //     const actual = hero.tasks
-  //     assert.deepStrictEqual(actual, [iWouldLikeToRage, drinkingContestWithPike, crucibleShowdown])
-  //   });
+  describe("Task", function() {
+    it("should be able to sort tasks by difficulty", function(){
+      hero.sortBy("difficulty");
+      const actual = hero.tasks
+      assert.deepStrictEqual(actual, [iWouldLikeToRage, drinkingContestWithPike, crucibleShowdown])
+    });
 
-    // xit("should be able to sort tasks by urgency", function(){
-    //   hero.sortByUrgency();
-    //   const actual = hero.tasks
-    //   assert.deepStrictEqual(actual, [iWouldLikeToRage, crucibleShowdown, drinkingContestWithPike]));
+    it("should be able to sort tasks by urgency", function(){
+      hero.sortBy("urgency");
+      const actual = hero.tasks
+      assert.deepStrictEqual(actual, [iWouldLikeToRage, crucibleShowdown, drinkingContestWithPike])
+    });
 
-    // xit("should be able to sort tasks by reward");
+    it("should be able to sort tasks by reward", function(){
+      hero.sortBy("reward");
+      const actual = hero.tasks
+      assert.deepStrictEqual(actual, [drinkingContestWithPike, iWouldLikeToRage, crucibleShowdown])
+    });
 
     it("should be able to view tasks that are marked as completed or incomplete", function() {
       iWouldLikeToRage.completeTask();
